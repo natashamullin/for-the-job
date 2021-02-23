@@ -18,7 +18,7 @@ const ProjectList = () => {
             description: "Test your coding knowledge with this great coding test."
         }, {
             name: "place holder",
-            description: "i need another one"
+            description: "I need another one"
         }, {
             name: "place holder",
             description: "I need another one"
@@ -29,7 +29,7 @@ const ProjectList = () => {
         <div>
             <div className="flex-row">
                 <img
-                    src={require(`../../assets/img/${project}.jpg`)}
+                    src={require(`../../assets/img/${projects}.jpg`)}
                     alt={image.name}
                     className="img-thumbnail mx-1"
                     key={image.name}

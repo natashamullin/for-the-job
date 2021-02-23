@@ -11,3 +11,163 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+header {
+  padding: 20px 35px;
+  /*background-image: url("./img/paint.jpg") ;*/
+  background-color: pink;
+  
+}
+/*id-item2-1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  font-size: 30px;
+}
+*/
+/*header */
+
+header h1 {
+  font-weight: bold;
+font-size: 36px;
+  color: black;
+  text-shadow: 0 0 10px ;
+  margin: 0;
+}
+header a {
+  text-decoration: none;
+  color: whitesmoke
+}
+header nav {
+  float: right;
+  margin: 7px 0;
+}
+header nav ul li {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+header nav ul li a {
+  margin: 0 30px;
+  font-weight: bold;
+  font-size: 22px;
+  color:black;
+  text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+}
+
+/* all about me */
+h1, h2 {
+  color: rgb(14, 13, 13);
+  background-color: whitesmoke;
+  text-align: center;
+}
+h2 {text-align: left;
+font-size: 30px;
+font-weight: bold;
+font-family: Arial, Helvetica, sans-serif;
+border-right: solid;
+padding: 20px;
+}
+
+p {background-color: whitesmoke;
+  font-family: verdana;
+  font-size: 18px;
+  left: 400px;
+right: 450px
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+}
+
+.flex1 {border: solid 0 2px 0 0;}
+
+ /* grid starts*/
+
+ .grid-container{
+  display: grid;
+  grid-template-columns: repeat (auto-fill, minmax(240px, 1fr));
+  grid-template-rows: 100px 100px 100px 100px;
+grid-gap: 10px;
+}
+
+.grid-item-1 {
+  grid-row-start: 1 ;
+  grid-row-end:5 ;
+  grid-column: 1;
+  margin: 0;
+  background-size: cover;
+background-position: center; 
+  column-span: all;
+}
+
+.grid-item-2{ 
+  background-size: cover;
+  background-position: bottom;
+}
+
+.grid-item-3{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start:2;
+  grid-column-end: 4; 
+background-color: thistle;  
+background-size: cover;
+background-position: center; 
+}
+
+
+.grid-item-4 {
+  grid-row-end: 5;
+  grid-row-start: 3;
+  grid-column-start: 3;
+  background-size: cover;
+  background-position: center;  
+}
+
+
+.grid-item-5{
+  grid-column-start: 4;
+  grid-row-start: 1;
+  grid-row-end: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-item-6 {
+  background-size: cover;
+  background-position: center;
+}
+.grid-item-4:hover, .grid-item-5:hover, .grid-item-3:hover, .grid-item-2:hover, .grid-item-6:hover { 
+transform: scale(1.2);
+
+}
+
+.img-box{
+float:left ;
+background-color: ivory;
+font-family: sans-serif;
+color: black;
+}
+
+/* contact me*/
+.grid-item3 {
+ display: flex;
+ justify-content: space-around;
+border: solid 0 2px 0 0;}
+
+.grid-item3-2{
+display: inline-block;
+justify-content: space-around;
+margin: 20px;
+padding: 20px;
+font-size: 18px;
+
+}
+
