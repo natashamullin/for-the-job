@@ -1,28 +1,52 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import background from '../../assets/img/colorwall.jpg';
+import ProjectList from "../ProjectList";
+import myResume from "../../assets/img/Natasha-resume.pdf"
+import { capitalizeFirstLetter } from "../../utils/helpers"
 
+function Nav(props) {
+    const {
+        setCurrentPage,
+        currentPage,
+        pages = []
+    } = props;
 
-function Nav() {
+    useEffect(() => {
+        document.title = capitalizeFirstLetter(currentPage.name)
+    }, [currentPage])
+
     return (
-        <header>
-            <h1>Natasha Mullin</h1>
+
+        < header className="flex-row px-1" style={{ backgroundImage: `url(${background})`, height: '250px' }} >
+            <h2>
+                <a data-testid="link" href="/"> Natasha Mullin</a>
+            </h2>
             <nav>
-                <ul>
-                    <li> <a href="#about-me">About Me</a>
+                <ul className="flex-row">
+                    {pages.map(page => (
+                        <li className="mx-2" key={page.name}>
+                            <span onClick={() => setCurrentPage(page)}>
+                                {capitalizeFirstLetter(page.name)}
+                            </span>
+                        </li>
+                    ))}
+                    {/* <li className="mx-2">
+                        <a data-testid="about" href="#about-me" onClick={() => setCurrentPage(currentPage)}>About Me</a>
                     </li>
                     <li>
-                        <a href="#my-work">My Work</a>
+                        <a href={<ProjectList />} onClick={() => setCurrentPage(currentPage)}>My Work</a>
+                    </li>
+                    <li className={`mx-2 ${currentPage && 'navActive'}`}>
+                        <span onClick={() => setCurrentPage(currentPage)}>Contact Me</span>
                     </li>
                     <li>
-                        <a href="#hit-me-up">Contact me</a>
-                    </li>
-                    <li>
-                        <a href="#my-resume">My resume</a>
-                    </li>
+                        <a href={myResume} download="Natasha_Mullin_Resume">My resume</a>
+                    </li> */}
                 </ul>
             </nav>
-            {/* <background-image: src="./img/colorflower.jpg" ;></background-image:>
-                <img src="./img/natasha.jpg" alt="my beautiful face goes here" width="250" height="400" /> */}
+
         </header >
+
     )
 }
 

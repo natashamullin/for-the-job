@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from './components/Nav';
-import About from "./components/About";
-import Projects from "./components/Projects";
-import ContactForm from './components/Contact';
-// import ContactForm from "./components/Contact"
+import Links from './components/Links';
+import Page from './components/Page';
+
+// heroku https://sheltered-harbor-75048.herokuapp.com/ | https://git.heroku.com/sheltered-harbor-75048.git
 
 function App() {
+  const [pages] = useState([
+    {
+      name: "about me"
+    },
+    { name: "portfolio" },
+    { name: "contact" },
+    {
+      name: "resume"
+    }
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(pages[0]);
+  console.log(currentPage)
   return (
     <div>
-      <Nav></Nav>
+
+      <Nav
+        pages={pages}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      >
+      </Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Projects> </Projects>
-        <About></About>
+        <Page currentPage={currentPage}></Page>
       </main>
+      <footer>
+        <Links></Links>
+      </footer>
     </div>
   );
 }
